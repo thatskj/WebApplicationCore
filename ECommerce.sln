@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationCore", "WebApplicationCore\WebApplicationCore.csproj", "{83B12446-A6DB-4D96-A5CA-3D9C6424BCFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Web", "WebApplicationCore\ECommerce.Web.csproj", "{83B12446-A6DB-4D96-A5CA-3D9C6424BCFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{921CE7A6-839A-4D79-BB4C-C534F2D6635C}"
 EndProject
