@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Domain.Logic\ECommerce.Domain.Logic.Implementations.csproj" />
+  </ItemGroup>
+
 </Project>
