@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ECommerce.Domain.Entities.Entities
+﻿namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VSalesPersonSalesByFiscalYears
+    public partial class VSalesPersonSalesByFiscalYears : BaseEntity
     {
-        public int? SalesPersonId { get; set; }
         public string FullName { get; set; }
         public string JobTitle { get; set; }
         public string SalesTerritory { get; set; }

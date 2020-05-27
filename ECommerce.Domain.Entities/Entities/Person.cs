@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Person
+    public partial class Person : BaseEntity
     {
         public Person()
         {

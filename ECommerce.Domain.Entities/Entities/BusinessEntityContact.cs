@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class BusinessEntityContact
+    public partial class BusinessEntityContact : BaseEntity
     {
-        public int BusinessEntityId { get; set; }
         public int PersonId { get; set; }
         public int ContactTypeId { get; set; }
         public Guid Rowguid { get; set; }

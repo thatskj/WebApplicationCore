@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class PersonCreditCard
+    public partial class PersonCreditCard : BaseEntity
     {
         public int BusinessEntityId { get; set; }
         public int CreditCardId { get; set; }

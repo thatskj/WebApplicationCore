@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class WorkOrderRouting
+    public partial class WorkOrderRouting : BaseEntity
     {
-        public int WorkOrderId { get; set; }
         public int ProductId { get; set; }
         public short OperationSequence { get; set; }
         public short LocationId { get; set; }
@@ -17,7 +15,6 @@ namespace ECommerce.Domain.Entities.Entities
         public decimal PlannedCost { get; set; }
         public decimal? ActualCost { get; set; }
         public DateTime ModifiedDate { get; set; }
-
         public virtual Location Location { get; set; }
         public virtual WorkOrder WorkOrder { get; set; }
     }

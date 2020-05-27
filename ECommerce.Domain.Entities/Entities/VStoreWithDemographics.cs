@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ECommerce.Domain.Entities.Entities
+﻿namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VStoreWithDemographics
+    public partial class VStoreWithDemographics : BaseEntity
     {
-        public int BusinessEntityId { get; set; }
         public string Name { get; set; }
         public decimal? AnnualSales { get; set; }
         public decimal? AnnualRevenue { get; set; }

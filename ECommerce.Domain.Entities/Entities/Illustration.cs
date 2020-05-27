@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Illustration
+    public partial class Illustration : BaseEntity
     {
         public Illustration()
         {
             ProductModelIllustration = new HashSet<ProductModelIllustration>();
         }
 
-        public int IllustrationId { get; set; }
         public string Diagram { get; set; }
         public DateTime ModifiedDate { get; set; }
 

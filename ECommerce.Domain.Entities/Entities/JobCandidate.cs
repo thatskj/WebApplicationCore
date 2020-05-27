@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class JobCandidate
+    public partial class JobCandidate : BaseEntity
     {
-        public int JobCandidateId { get; set; }
         public int? BusinessEntityId { get; set; }
         public string Resume { get; set; }
         public DateTime ModifiedDate { get; set; }

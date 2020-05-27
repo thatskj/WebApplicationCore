@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Address
+    public partial class Address : BaseEntity
     {
         public Address()
         {
@@ -12,7 +12,6 @@ namespace ECommerce.Domain.Entities.Entities
             SalesOrderHeaderShipToAddress = new HashSet<SalesOrderHeader>();
         }
 
-        public int AddressId { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string City { get; set; }

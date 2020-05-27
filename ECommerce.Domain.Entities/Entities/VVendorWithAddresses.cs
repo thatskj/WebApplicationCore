@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ECommerce.Domain.Entities.Entities
+﻿namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VVendorWithAddresses
+    public partial class VVendorWithAddresses : BaseEntity
     {
-        public int BusinessEntityId { get; set; }
         public string Name { get; set; }
         public string AddressType { get; set; }
         public string AddressLine1 { get; set; }

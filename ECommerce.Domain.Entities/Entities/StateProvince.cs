@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class StateProvince
+    public partial class StateProvince : BaseEntity
     {
         public StateProvince()
         {

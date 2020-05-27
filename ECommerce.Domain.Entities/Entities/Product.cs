@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Product
+    public partial class Product : BaseEntity
     {
         public Product()
         {
@@ -22,7 +22,6 @@ namespace ECommerce.Domain.Entities.Entities
             WorkOrder = new HashSet<WorkOrder>();
         }
 
-        public int ProductId { get; set; }
         public string Name { get; set; }
         public string ProductNumber { get; set; }
         public bool? MakeFlag { get; set; }

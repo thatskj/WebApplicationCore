@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ErrorLog
+    public partial class ErrorLog : BaseEntity
     {
-        public int ErrorLogId { get; set; }
         public DateTime ErrorTime { get; set; }
         public string UserName { get; set; }
         public int ErrorNumber { get; set; }

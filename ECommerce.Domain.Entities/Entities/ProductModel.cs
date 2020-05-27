@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ProductModel
+    public partial class ProductModel : BaseEntity
     {
         public ProductModel()
         {
@@ -12,7 +12,6 @@ namespace ECommerce.Domain.Entities.Entities
             ProductModelProductDescriptionCulture = new HashSet<ProductModelProductDescriptionCulture>();
         }
 
-        public int ProductModelId { get; set; }
         public string Name { get; set; }
         public string CatalogDescription { get; set; }
         public string Instructions { get; set; }

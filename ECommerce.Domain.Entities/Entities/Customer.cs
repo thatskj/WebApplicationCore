@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Customer
+    public partial class Customer : BaseEntity
     {
         public Customer()
         {
             SalesOrderHeader = new HashSet<SalesOrderHeader>();
         }
 
-        public int CustomerId { get; set; }
         public int? PersonId { get; set; }
         public int? StoreId { get; set; }
         public int? TerritoryId { get; set; }

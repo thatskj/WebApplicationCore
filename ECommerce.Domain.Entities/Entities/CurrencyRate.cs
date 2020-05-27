@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class CurrencyRate
+    public partial class CurrencyRate : BaseEntity
     {
         public CurrencyRate()
         {
             SalesOrderHeader = new HashSet<SalesOrderHeader>();
         }
 
-        public int CurrencyRateId { get; set; }
         public DateTime CurrencyRateDate { get; set; }
         public string FromCurrencyCode { get; set; }
         public string ToCurrencyCode { get; set; }

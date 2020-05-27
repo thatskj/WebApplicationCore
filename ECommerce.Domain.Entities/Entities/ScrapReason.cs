@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ScrapReason
+    public partial class ScrapReason : BaseEntity
     {
         public ScrapReason()
         {

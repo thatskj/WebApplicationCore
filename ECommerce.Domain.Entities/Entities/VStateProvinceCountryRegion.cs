@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ECommerce.Domain.Entities.Entities
+﻿namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VStateProvinceCountryRegion
+    public partial class VStateProvinceCountryRegion : BaseEntity
     {
-        public int StateProvinceId { get; set; }
         public string StateProvinceCode { get; set; }
         public bool IsOnlyStateProvinceFlag { get; set; }
         public string StateProvinceName { get; set; }

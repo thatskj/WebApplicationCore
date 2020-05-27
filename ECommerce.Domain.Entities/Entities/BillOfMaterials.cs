@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class BillOfMaterials
+    public partial class BillOfMaterials : BaseEntity
     {
-        public int BillOfMaterialsId { get; set; }
         public int? ProductAssemblyId { get; set; }
         public int ComponentId { get; set; }
         public DateTime StartDate { get; set; }
@@ -14,7 +13,6 @@ namespace ECommerce.Domain.Entities.Entities
         public short Bomlevel { get; set; }
         public decimal PerAssemblyQty { get; set; }
         public DateTime ModifiedDate { get; set; }
-
         public virtual Product Component { get; set; }
         public virtual Product ProductAssembly { get; set; }
         public virtual UnitMeasure UnitMeasureCodeNavigation { get; set; }

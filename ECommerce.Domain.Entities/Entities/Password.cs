@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Password
+    public partial class Password : BaseEntity
     {
         public int BusinessEntityId { get; set; }
         public string PasswordHash { get; set; }

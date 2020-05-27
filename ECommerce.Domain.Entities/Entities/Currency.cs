@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Currency
+    public partial class Currency : BaseEntity
     {
         public Currency()
         {

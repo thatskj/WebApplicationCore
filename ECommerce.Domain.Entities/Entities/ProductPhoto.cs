@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ProductPhoto
+    public partial class ProductPhoto : BaseEntity
     {
         public ProductPhoto()
         {
             ProductProductPhoto = new HashSet<ProductProductPhoto>();
         }
 
-        public int ProductPhotoId { get; set; }
         public byte[] ThumbNailPhoto { get; set; }
         public string ThumbnailPhotoFileName { get; set; }
         public byte[] LargePhoto { get; set; }

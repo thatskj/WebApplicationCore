@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VPersonDemographics
+    public partial class VPersonDemographics : BaseEntity
     {
         public int BusinessEntityId { get; set; }
         public decimal? TotalPurchaseYtd { get; set; }

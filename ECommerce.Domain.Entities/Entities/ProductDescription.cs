@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ProductDescription
+    public partial class ProductDescription : BaseEntity
     {
         public ProductDescription()
         {
             ProductModelProductDescriptionCulture = new HashSet<ProductModelProductDescriptionCulture>();
         }
 
-        public int ProductDescriptionId { get; set; }
         public string Description { get; set; }
         public Guid Rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }

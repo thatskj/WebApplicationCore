@@ -134,7 +134,7 @@ namespace ECommerce.Domain.Entities.Entities
                 entity.HasIndex(e => new { e.AddressLine1, e.AddressLine2, e.City, e.StateProvinceId, e.PostalCode })
                     .IsUnique();
 
-                entity.Property(e => e.AddressId)
+                entity.Property(e => e.Id)
                     .HasColumnName("AddressID")
                     .HasComment("Primary key for Address records.");
 
@@ -191,7 +191,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_AddressType_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.AddressTypeId)
+                entity.Property(e => e.Id)
                     .HasColumnName("AddressTypeID")
                     .HasComment("Primary key for AddressType records.");
 
@@ -243,7 +243,7 @@ namespace ECommerce.Domain.Entities.Entities
 
             modelBuilder.Entity<BillOfMaterials>(entity =>
             {
-                entity.HasKey(e => e.BillOfMaterialsId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK_BillOfMaterials_BillOfMaterialsID")
                     .IsClustered(false);
 
@@ -258,7 +258,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .IsUnique()
                     .IsClustered();
 
-                entity.Property(e => e.BillOfMaterialsId)
+                entity.Property(e => e.Id)
                     .HasColumnName("BillOfMaterialsID")
                     .HasComment("Primary key for BillOfMaterials records.");
 
@@ -324,7 +324,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_BusinessEntity_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.BusinessEntityId)
+                entity.Property(e => e.Id)
                     .HasColumnName("BusinessEntityID")
                     .HasComment("Primary key for all customers, vendors, and employees.");
 
@@ -341,7 +341,7 @@ namespace ECommerce.Domain.Entities.Entities
 
             modelBuilder.Entity<BusinessEntityAddress>(entity =>
             {
-                entity.HasKey(e => new { e.BusinessEntityId, e.AddressId, e.AddressTypeId })
+                entity.HasKey(e => new { e.Id, e.AddressId, e.AddressTypeId })
                     .HasName("PK_BusinessEntityAddress_BusinessEntityID_AddressID_AddressTypeID");
 
                 entity.ToTable("BusinessEntityAddress", "Person");
@@ -356,7 +356,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_BusinessEntityAddress_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.BusinessEntityId)
+                entity.Property(e => e.Id)
                     .HasColumnName("BusinessEntityID")
                     .HasComment("Primary key. Foreign key to BusinessEntity.BusinessEntityID.");
 
@@ -390,13 +390,13 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasOne(d => d.BusinessEntity)
                     .WithMany(p => p.BusinessEntityAddress)
-                    .HasForeignKey(d => d.BusinessEntityId)
+                    .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<BusinessEntityContact>(entity =>
             {
-                entity.HasKey(e => new { e.BusinessEntityId, e.PersonId, e.ContactTypeId })
+                entity.HasKey(e => new { e.Id, e.PersonId, e.ContactTypeId })
                     .HasName("PK_BusinessEntityContact_BusinessEntityID_PersonID_ContactTypeID");
 
                 entity.ToTable("BusinessEntityContact", "Person");
@@ -411,7 +411,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_BusinessEntityContact_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.BusinessEntityId)
+                entity.Property(e => e.Id)
                     .HasColumnName("BusinessEntityID")
                     .HasComment("Primary key. Foreign key to BusinessEntity.BusinessEntityID.");
 
@@ -435,7 +435,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasOne(d => d.BusinessEntity)
                     .WithMany(p => p.BusinessEntityContact)
-                    .HasForeignKey(d => d.BusinessEntityId)
+                    .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
                 entity.HasOne(d => d.ContactType)
@@ -459,7 +459,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_ContactType_Name")
                     .IsUnique();
 
-                entity.Property(e => e.ContactTypeId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ContactTypeID")
                     .HasComment("Primary key for ContactType records.");
 
@@ -548,7 +548,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_CreditCard_CardNumber")
                     .IsUnique();
 
-                entity.Property(e => e.CreditCardId)
+                entity.Property(e => e.Id)
                     .HasColumnName("CreditCardID")
                     .HasComment("Primary key for CreditCard records.");
 
@@ -582,7 +582,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_Culture_Name")
                     .IsUnique();
 
-                entity.Property(e => e.CultureId)
+                entity.Property(e => e.Id)
                     .HasColumnName("CultureID")
                     .HasMaxLength(6)
                     .IsFixedLength()
@@ -638,7 +638,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_CurrencyRate_CurrencyRateDate_FromCurrencyCode_ToCurrencyCode")
                     .IsUnique();
 
-                entity.Property(e => e.CurrencyRateId)
+                entity.Property(e => e.Id)
                     .HasColumnName("CurrencyRateID")
                     .HasComment("Primary key for CurrencyRate records.");
 
@@ -698,7 +698,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasIndex(e => e.TerritoryId);
 
-                entity.Property(e => e.CustomerId)
+                entity.Property(e => e.Id)
                     .HasColumnName("CustomerID")
                     .HasComment("Primary key.");
 
@@ -746,13 +746,13 @@ namespace ECommerce.Domain.Entities.Entities
 
             modelBuilder.Entity<DatabaseLog>(entity =>
             {
-                entity.HasKey(e => e.DatabaseLogId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK_DatabaseLog_DatabaseLogID")
                     .IsClustered(false);
 
                 entity.HasComment("Audit table tracking all DDL changes made to the AdventureWorks database. Data is captured by the database trigger ddlDatabaseTriggerLog.");
 
-                entity.Property(e => e.DatabaseLogId)
+                entity.Property(e => e.Id)
                     .HasColumnName("DatabaseLogID")
                     .HasComment("Primary key for DatabaseLog records.");
 
@@ -799,7 +799,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_Department_Name")
                     .IsUnique();
 
-                entity.Property(e => e.DepartmentId)
+                entity.Property(e => e.Id)
                     .HasColumnName("DepartmentID")
                     .HasComment("Primary key for Department records.");
 
@@ -1049,7 +1049,7 @@ namespace ECommerce.Domain.Entities.Entities
             {
                 entity.HasComment("Audit table tracking errors in the the AdventureWorks database that are caught by the CATCH block of a TRY...CATCH construct. Data is inserted by stored procedure dbo.uspLogError when it is executed from inside the CATCH block of a TRY...CATCH construct.");
 
-                entity.Property(e => e.ErrorLogId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ErrorLogID")
                     .HasComment("Primary key for ErrorLog records.");
 
@@ -1087,7 +1087,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasComment("Bicycle assembly diagrams.");
 
-                entity.Property(e => e.IllustrationId)
+                entity.Property(e => e.Id)
                     .HasColumnName("IllustrationID")
                     .HasComment("Primary key for Illustration records.");
 
@@ -1109,7 +1109,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasIndex(e => e.BusinessEntityId);
 
-                entity.Property(e => e.JobCandidateId)
+                entity.Property(e => e.Id)
                     .HasColumnName("JobCandidateID")
                     .HasComment("Primary key for JobCandidate records.");
 
@@ -1141,7 +1141,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_Location_Name")
                     .IsUnique();
 
-                entity.Property(e => e.LocationId)
+                entity.Property(e => e.Id)
                     .HasColumnName("LocationID")
                     .HasComment("Primary key for Location records.");
 
@@ -1367,7 +1367,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasComment("Type of phone number of a person.");
 
-                entity.Property(e => e.PhoneNumberTypeId)
+                entity.Property(e => e.Id)
                     .HasColumnName("PhoneNumberTypeID")
                     .HasComment("Primary key for telephone number type records.");
 
@@ -1400,7 +1400,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_Product_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.ProductId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductID")
                     .HasComment("Primary key for Product records.");
 
@@ -1536,7 +1536,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_ProductCategory_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.ProductCategoryId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductCategoryID")
                     .HasComment("Primary key for ProductCategory records.");
 
@@ -1602,7 +1602,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_ProductDescription_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.ProductDescriptionId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductDescriptionID")
                     .HasComment("Primary key for ProductDescription records.");
 
@@ -1725,7 +1725,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_ProductModel_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.ProductModelId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductModelID")
                     .HasComment("Primary key for ProductModel records.");
 
@@ -1836,7 +1836,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasComment("Product images.");
 
-                entity.Property(e => e.ProductPhotoId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductPhotoID")
                     .HasComment("Primary key for ProductPhoto records.");
 
@@ -1903,7 +1903,7 @@ namespace ECommerce.Domain.Entities.Entities
                 entity.HasIndex(e => new { e.Comments, e.ProductId, e.ReviewerName })
                     .HasName("IX_ProductReview_ProductID_Name");
 
-                entity.Property(e => e.ProductReviewId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductReviewID")
                     .HasComment("Primary key for ProductReview records.");
 
@@ -1957,7 +1957,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasName("AK_ProductSubcategory_rowguid")
                     .IsUnique();
 
-                entity.Property(e => e.ProductSubcategoryId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductSubcategoryID")
                     .HasComment("Primary key for ProductSubcategory records.");
 
@@ -1971,7 +1971,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasMaxLength(50)
                     .HasComment("Subcategory description.");
 
-                entity.Property(e => e.ProductCategoryId)
+                entity.Property(e => e.Id)
                     .HasColumnName("ProductCategoryID")
                     .HasComment("Product category identification number. Foreign key to ProductCategory.ProductCategoryID.");
 
@@ -1982,7 +1982,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasOne(d => d.ProductCategory)
                     .WithMany(p => p.ProductSubcategory)
-                    .HasForeignKey(d => d.ProductCategoryId)
+                    .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
@@ -3936,7 +3936,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.SalesPersonId).HasColumnName("SalesPersonID");
+                entity.Property(e => e.Id).HasColumnName("SalesPersonID");
 
                 entity.Property(e => e.SalesTerritory)
                     .IsRequired()
@@ -3976,7 +3976,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .HasMaxLength(3)
                     .IsFixedLength();
 
-                entity.Property(e => e.StateProvinceId).HasColumnName("StateProvinceID");
+                entity.Property(e => e.Id).HasColumnName("StateProvinceID");
 
                 entity.Property(e => e.StateProvinceName)
                     .IsRequired()
@@ -4003,7 +4003,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
+                entity.Property(e => e.Id).HasColumnName("BusinessEntityID");
 
                 entity.Property(e => e.City)
                     .IsRequired()
@@ -4034,7 +4034,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasComment("Stores (including store contacts) that sell Adventure Works Cycles products to consumers.");
 
-                entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
+                entity.Property(e => e.Id).HasColumnName("BusinessEntityID");
 
                 entity.Property(e => e.ContactType)
                     .IsRequired()
@@ -4081,7 +4081,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.Property(e => e.Brands).HasMaxLength(30);
 
-                entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
+                entity.Property(e => e.Id).HasColumnName("BusinessEntityID");
 
                 entity.Property(e => e.BusinessType).HasMaxLength(5);
 
@@ -4112,7 +4112,7 @@ namespace ECommerce.Domain.Entities.Entities
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
+                entity.Property(e => e.Id).HasColumnName("BusinessEntityID");
 
                 entity.Property(e => e.City)
                     .IsRequired()
@@ -4143,7 +4143,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasComment("Vendor (company) names  and the names of vendor employees to contact.");
 
-                entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
+                entity.Property(e => e.Id).HasColumnName("BusinessEntityID");
 
                 entity.Property(e => e.ContactType)
                     .IsRequired()
@@ -4240,7 +4240,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasIndex(e => e.ScrapReasonId);
 
-                entity.Property(e => e.WorkOrderId)
+                entity.Property(e => e.Id)
                     .HasColumnName("WorkOrderID")
                     .HasComment("Primary key for WorkOrder records.");
 
@@ -4289,7 +4289,7 @@ namespace ECommerce.Domain.Entities.Entities
 
             modelBuilder.Entity<WorkOrderRouting>(entity =>
             {
-                entity.HasKey(e => new { e.WorkOrderId, e.ProductId, e.OperationSequence })
+                entity.HasKey(e => new { e.Id, e.ProductId, e.OperationSequence })
                     .HasName("PK_WorkOrderRouting_WorkOrderID_ProductID_OperationSequence");
 
                 entity.ToTable("WorkOrderRouting", "Production");
@@ -4298,7 +4298,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasIndex(e => e.ProductId);
 
-                entity.Property(e => e.WorkOrderId)
+                entity.Property(e => e.Id)
                     .HasColumnName("WorkOrderID")
                     .HasComment("Primary key. Foreign key to WorkOrder.WorkOrderID.");
 
@@ -4352,7 +4352,7 @@ namespace ECommerce.Domain.Entities.Entities
 
                 entity.HasOne(d => d.WorkOrder)
                     .WithMany(p => p.WorkOrderRouting)
-                    .HasForeignKey(d => d.WorkOrderId)
+                    .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 

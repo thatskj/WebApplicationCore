@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VJobCandidateEmployment
+    public partial class VJobCandidateEmployment : BaseEntity
     {
         public int JobCandidateId { get; set; }
         public DateTime? EmpStartDate { get; set; }

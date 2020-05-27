@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class CreditCard
+    public partial class CreditCard : BaseEntity
     {
         public CreditCard()
         {
@@ -11,7 +11,6 @@ namespace ECommerce.Domain.Entities.Entities
             SalesOrderHeader = new HashSet<SalesOrderHeader>();
         }
 
-        public int CreditCardId { get; set; }
         public string CardType { get; set; }
         public string CardNumber { get; set; }
         public byte ExpMonth { get; set; }

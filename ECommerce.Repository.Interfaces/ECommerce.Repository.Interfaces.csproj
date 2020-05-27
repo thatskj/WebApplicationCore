@@ -4,8 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ECommerce.Repository.Implementations\ECommerce.Repository.Implementations.csproj" />
-  </ItemGroup>
-
 </Project>

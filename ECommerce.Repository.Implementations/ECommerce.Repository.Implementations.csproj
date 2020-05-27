@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ECommerce.Domain.Entities\ECommerce.Domain.Entities.csproj" />
+    <ProjectReference Include="..\ECommerce.Repository.Interfaces\ECommerce.Repository.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

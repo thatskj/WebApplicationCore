@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VAdditionalContactInfo
+    public partial class VAdditionalContactInfo : BaseEntity
     {
         public int BusinessEntityId { get; set; }
         public string FirstName { get; set; }

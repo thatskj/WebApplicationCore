@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Shift
+    public partial class Shift : BaseEntity
     {
         public Shift()
         {

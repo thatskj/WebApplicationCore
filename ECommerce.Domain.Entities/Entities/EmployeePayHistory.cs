@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class EmployeePayHistory
+    public partial class EmployeePayHistory : BaseEntity
     {
         public int BusinessEntityId { get; set; }
         public DateTime RateChangeDate { get; set; }

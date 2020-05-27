@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ProductReview
+    public partial class ProductReview : BaseEntity
     {
-        public int ProductReviewId { get; set; }
         public int ProductId { get; set; }
         public string ReviewerName { get; set; }
         public DateTime ReviewDate { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class TransactionHistory
+    public partial class TransactionHistory : BaseEntity
     {
         public int TransactionId { get; set; }
         public int ProductId { get; set; }

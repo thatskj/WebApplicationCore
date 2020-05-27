@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class BusinessEntity
+    public partial class BusinessEntity : BaseEntity
     {
         public BusinessEntity()
         {
@@ -11,7 +11,6 @@ namespace ECommerce.Domain.Entities.Entities
             BusinessEntityContact = new HashSet<BusinessEntityContact>();
         }
 
-        public int BusinessEntityId { get; set; }
         public Guid Rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.Domain.Entities.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,7 @@ namespace WebApplicationCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<ECommerce.Domain.Entities.Entities.ECommerceContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionString").Value));
+            services.AddDbContext<ECommerceContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionString").Value));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

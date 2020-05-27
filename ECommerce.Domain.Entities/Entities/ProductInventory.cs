@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class ProductInventory
+    public partial class ProductInventory : BaseEntity
     {
         public int ProductId { get; set; }
         public short LocationId { get; set; }

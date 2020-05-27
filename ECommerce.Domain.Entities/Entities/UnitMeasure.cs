@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class UnitMeasure
+    public partial class UnitMeasure : BaseEntity
     {
         public UnitMeasure()
         {

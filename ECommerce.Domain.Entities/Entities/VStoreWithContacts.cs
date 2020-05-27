@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ECommerce.Domain.Entities.Entities
+﻿namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class VStoreWithContacts
+    public partial class VStoreWithContacts : BaseEntity
     {
-        public int BusinessEntityId { get; set; }
         public string Name { get; set; }
         public string ContactType { get; set; }
         public string Title { get; set; }

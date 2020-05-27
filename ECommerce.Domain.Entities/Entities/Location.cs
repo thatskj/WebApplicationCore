@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class Location
+    public partial class Location : BaseEntity
     {
         public Location()
         {
@@ -11,7 +11,6 @@ namespace ECommerce.Domain.Entities.Entities
             WorkOrderRouting = new HashSet<WorkOrderRouting>();
         }
 
-        public short LocationId { get; set; }
         public string Name { get; set; }
         public decimal CostRate { get; set; }
         public decimal Availability { get; set; }

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entities.Entities
 {
-    public partial class PhoneNumberType
+    public partial class PhoneNumberType : BaseEntity
     {
         public PhoneNumberType()
         {
             PersonPhone = new HashSet<PersonPhone>();
         }
 
-        public int PhoneNumberTypeId { get; set; }
         public string Name { get; set; }
         public DateTime ModifiedDate { get; set; }
 
